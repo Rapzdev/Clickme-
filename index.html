@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👑 Golden Clicker - Main Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="game-body">
+    <div class="golden-bg">
+        <div class="sparkles"></div>
+    </div>
+
+    <!-- Auth Page -->
+    <div id="authPage" class="page active">
+        <div class="auth-container golden-card">
+            <div class="crown-icon">👑</div>
+            <h1 class="golden-title">GOLDEN CLICKER</h1>
+            <p class="subtitle">Jadilah Raja Klik!</p>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="showLogin()">
+                    <span class="icon">🔐</span> Login
+                </button>
+                <button class="tab-btn" onclick="showRegister()">
+                    <span class="icon">✨</span> Daftar
+                </button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form active">
+                <div class="input-group">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <span class="input-icon">🔑</span>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button class="golden-btn" onclick="login()">
+                    <span>Masuk Sekarang</span>
+                    <span class="btn-shine"></span>
+                </button>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerForm" class="auth-form">
+                <div class="input-group">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="regUsername" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <span class="input-icon">🔑</span>
+                    <input type="password" id="regPassword" placeholder="Password" required>
+                </div>
+                <button class="golden-btn" onclick="requestLocation()">
+                    <span>Daftar Akaun</span>
+                    <span class="btn-shine"></span>
+                </button>
+                <p class="info-text">✨ Lokasi diperlukan untuk leaderboard</p>
+            </div>
+            <div id="authError" class="error-msg"></div>
+        </div>
+    </div>
+
+    <!-- Game Page -->
+    <div id="gamePage" class="page">
+        <div class="game-header">
+            <div class="user-card golden-card-mini">
+                <div class="user-avatar">👤</div>
+                <div class="user-details">
+                    <div id="usernameDisplay" class="username"></div>
+                    <div id="countryDisplay" class="country"></div>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a href="leaderboard.html" class="icon-btn leaderboard-btn">
+                    🏆
+                    <span class="tooltip">Leaderboard</span>
+                </a>
+                <button class="icon-btn admin-btn" id="adminBtn" onclick="goToAdmin()" style="display: none;">
+                    👑
+                    <span class="tooltip">Admin Panel</span>
+                </button>
+                <button class="icon-btn logout-btn" onclick="logout()">
+                    🚪
+                    <span class="tooltip">Keluar</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div class="score-section golden-card">
+                <div class="score-label">
+                    <span class="icon">💰</span>
+                    <span>Skor Emas Anda</span>
+                </div>
+                <div id="scoreValue" class="score-number">0</div>
+                <div class="score-rank" id="userRank">Ranking: -</div>
+            </div>
+
+            <div class="click-section">
+                <div class="click-glow"></div>
+                <button id="clickButton" class="mega-click-btn" onclick="incrementScore()">
+                    <span class="btn-content">
+                        <span class="coin-icon">🪙</span>
+                        <span class="btn-text">KLIK!</span>
+                    </span>
+                    <div class="ripple"></div>
+                </button>
+                <div class="click-counter" id="clickCounter">+1</div>
+            </div>
+
+            <div class="stats-bar golden-card-mini">
+                <div class="stat-item">
+                    <span class="stat-icon">🎯</span>
+                    <span class="stat-label">Jumlah Klik</span>
+                    <span id="totalClicks" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">⚡</span>
+                    <span class="stat-label">Klik/Min</span>
+                    <span id="clicksPerMin" class="stat-value">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+                                            </html>
