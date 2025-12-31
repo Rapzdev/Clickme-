@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 Golden Clicker - Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="golden-bg">
+        <div class="sparkles"></div>
+    </div>
+
+    <div class="page active">
+        <div class="game-header">
+            <div class="user-card golden-card-mini">
+                <div class="user-avatar">👤</div>
+                <div class="user-details">
+                    <div id="usernameDisplay" class="username">Guest</div>
+                    <div id="countryDisplay" class="country">Loading...</div>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a href="index.html" class="icon-btn">
+                    🎮
+                    <span class="tooltip">Main Game</span>
+                </a>
+                <button class="icon-btn admin-btn" id="adminBtn" onclick="window.location.href='admin.html'" style="display: none;">
+                    👑
+                    <span class="tooltip">Admin Panel</span>
+                </button>
+                <button class="icon-btn logout-btn" onclick="logout()">
+                    🚪
+                    <span class="tooltip">Keluar</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="leaderboard-container">
+            <div class="page-title">
+                <h1>🏆 LEADERBOARD 🏆</h1>
+                <p>Raja-Raja Klik Terbaik</p>
+            </div>
+
+            <!-- Top 3 Podium -->
+            <div class="top-three">
+                <!-- Will be populated by JavaScript -->
+            </div>
+
+            <!-- Full Leaderboard -->
+            <div class="leaderboard-list">
+                <div class="list-header">
+                    <div>Rank</div>
+                    <div>Pemain</div>
+                    <div class="player-country-item">Negara</div>
+                    <div style="text-align: right;">Skor</div>
+                </div>
+                <div id="leaderboardBody">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
