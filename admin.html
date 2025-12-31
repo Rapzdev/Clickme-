@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👑 Golden Clicker - Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="golden-bg">
+        <div class="sparkles"></div>
+    </div>
+
+    <div class="page active">
+        <div class="game-header">
+            <div class="user-card golden-card-mini">
+                <div class="user-avatar">👑</div>
+                <div class="user-details">
+                    <div class="username" style="color: var(--gold-primary);">Admin Panel</div>
+                    <div class="country">Kawalan Penuh</div>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a href="index.html" class="icon-btn">
+                    🎮
+                    <span class="tooltip">Main Game</span>
+                </a>
+                <a href="leaderboard.html" class="icon-btn leaderboard-btn">
+                    🏆
+                    <span class="tooltip">Leaderboard</span>
+                </a>
+                <button class="icon-btn logout-btn" onclick="logout()">
+                    🚪
+                    <span class="tooltip">Keluar</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="admin-container">
+            <div class="page-title">
+                <h1>👑 ADMIN DASHBOARD</h1>
+                <p>Panel Kawalan Raja Emas</p>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="admin-stats">
+                <div class="admin-stat-card">
+                    <h3>👥 Total Pemain</h3>
+                    <div id="totalPlayers" class="admin-stat-value">0</div>
+                </div>
+                <div class="admin-stat-card">
+                    <h3>🟢 Pemain Online</h3>
+                    <div id="onlinePlayers" class="admin-stat-value">0</div>
+                </div>
+                <div class="admin-stat-card">
+                    <h3>🏆 Skor Tertinggi</h3>
+                    <div id="highestScore" class="admin-stat-value">0</div>
+                </div>
+            </div>
+
+            <!-- Players Table -->
+            <div class="admin-table-container">
+                <h3>📊 Semua Data Pemain</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>👤 Username</th>
+                            <th>🌍 Negara</th>
+                            <th>💰 Skor</th>
+                            <th>📡 Status</th>
+                            <th>🕐 Terakhir Aktif</th>
+                        </tr>
+                    </thead>
+                    <tbody id="playersTableBody">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
